@@ -5,7 +5,7 @@
 ### Loop Event
 *  `aeEventLoop`
 
-    ![123](./png/1.png)
+    ![123](1.png)
 
 * `aeBeforeSleepProc` => before & after hook
 
@@ -16,6 +16,10 @@
 * `aeTimeEvent` => `aeTimeEvent` & `aeFinalizerProc`
 
 * `aeFiredEvent`
+
+
+### Methods:
+![methods](./png/3.png)
 
 
 ## File: `ae_epoll.c`
