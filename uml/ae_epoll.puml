@@ -1,0 +1,12 @@
+@startuml
+object ae_epoll.c {
+    aeApiCreate()
+    aeApiResize()
+    aeApiFree()
+    aeApiAddEvent()
+    aeApiDelEvent()
+    aeApiPoll()
+    aeApiName()
+}
+
+@enduml

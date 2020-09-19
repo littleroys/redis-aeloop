@@ -1,0 +1,48 @@
+@startuml
+
+
+
+object aeEventLoop {
+    int maxfd;
+    int setsize;
+    long long timeEventNextId;
+    aeFileEvent *events;
+    aeFiredEvent *fired;
+    aeTimeEvent *timeEventHead;
+    int stop;
+    void *apidata;
+    aeBeforeSleepProc *beforesleep;
+    aeBeforeSleepProc *aftersleep;
+    int flags;
+}
+
+object aeFileEvent {
+    int mask;
+    aeFileProc *rfileProc;
+    aeFileProc *wfileProc;
+    void *clientData;
+}
+
+
+object aeFiredEvent {
+    int fd;
+    int mask;
+}
+
+object aeTimeEvent {
+    long long id;
+    monotime when;
+    aeTimeProc *timeProc;
+    aeEventFinalizerProc *finalizerProc;
+    void *clientData;
+    struct aeTimeEvent *prev;
+    struct aeTimeEvent *next;
+    int refcount;
+}
+
+aeEventLoop *-- aeFileEvent
+aeEventLoop *-- aeFiredEvent
+aeEventLoop *-- aeTimeEvent
+
+
+@enduml
