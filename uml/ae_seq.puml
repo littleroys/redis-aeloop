@@ -1,0 +1,9 @@
+@startuml
+
+aeMain -> aeProcessEvents
+activate aeMain
+aeMain -> aeMain : while loop
+aeProcessEvents -> processFileEvents
+aeProcessEvents -> processTimeEvents
+return processed
+@enduml 
